@@ -1,0 +1,23 @@
+#running shell script with github workflow
+name: Check for push
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: script
+        run: bash migrate_repo.sh bb_repositories.csv
+        
+      - name: printing the list
+        run: |
+          echo Here is the list
+          ls -a
+          pwd
+        
+        
+        shell: bash
