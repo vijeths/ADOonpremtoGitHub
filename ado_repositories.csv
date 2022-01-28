@@ -1,0 +1,5 @@
+ADO Repo,ADO Org,GH Repo,GH Org,Description,Private,Archive
+repoa,ADO_USERNAME,ghA,GH_USERNAME,Description A,FALSE,FALSE
+repob,ADO_USERNAME,ghB,GH_USERNAME,Description B,FALSE,FALSE
+repoc,ADO_USERNAME,ghC,GH_USERNAME,Description C,FALSE,FALSE
+repod,ADO_USERNAME,ghD,GH_USERNAME,Description D,FALSE,FALSE
