@@ -1,7 +1,8 @@
 #!/bin/bash
-#read -p 'Bitbucket Username (not email): ' BB_USERNAME
-#read -sp 'Bitbucket Password: ' BB_PASSWORD
-#https://dev.azure.com/{organization}/_apis/git/repositories?api-version=6.0
+
+  #read -p 'Bitbucket Username (not email): ' BB_USERNAME
+  #read -sp 'Bitbucket Password: ' BB_PASSWORD
+  #https://dev.azure.com/{organization}/_apis/git/repositories?api-version=6.0
 next_url="https://dev.azure.com/vijeths01/_apis/git/repositories?api-version=6.0"
 while [ ! -z "$next_url" ]; do
  #   response_json=$( curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url" )
