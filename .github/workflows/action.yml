@@ -8,20 +8,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-        PAT: ${{ secrets.PAT }}
+        PAT: ${{ secrets.ADO_PAT }}
     steps:
       - uses: actions/checkout@v2
       - run: |
           ./list-ADOonprem-repositories.sh
+          
       ##- name: script
        ## run:  bash list-ADOonprem-repositories.sh > ado_repositories.csv
-              bash migrate_repo.sh ado_repositories.csv
+             ## bash migrate_repo.sh ado_repositories.csv
         
-      - name: printing the list
-        run: |
-          echo Here is the list
-          ls -a
-          pwd
+      ##- name: printing the list
+      ##  run: |
+        ##  echo Here is the list
+        ##  ls -a
+         ## pwd
         
         
-        shell: bash
+        ##shell: bash
