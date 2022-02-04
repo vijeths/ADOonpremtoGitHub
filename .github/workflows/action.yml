@@ -11,13 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-        run: ./list-ADOonprem-repositories.sh
+        
     
         
-        -name: printing the list
-         run: | echo Here is the list
-               ls -a
-               pwd
+      - name: printing the list
+        run: |
+          ./migrate-repositories-to-github.sh ado_repositories.csv
+          echo Here is the list
+          ls -a
+          pwd
         
         
-        ##shell: bash
+    
