@@ -14,7 +14,7 @@ jobs:
         
     
         
-      - name: printing the list
+      - name: Running migrate script
         run: |
           ./migrate-repositories-to-github.sh ado_repositories.csv
        
