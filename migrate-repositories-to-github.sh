@@ -13,7 +13,7 @@ do
   #next_url="https://api.bitbucket.org/2.0/repositories?role=member"
   #test=$(curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url")
   #echo "$test"
-  git clone --mirror https://${{ secrets.ADO_USERNAME }}:${ secrets.ADO_PASSWORD }}@dev.azure.com/Infy/_git/$ado_org/$ado_repo.git
+  git clone --mirror https://${{ secrets.ADO_USERNAME }}:${ secrets.ADO_PAT }}@dev.azure.com/Infy/_git/$ado_org/$ado_repo.git
   cd $ado_repo.git
   echo
 
@@ -23,16 +23,16 @@ do
     echo "PUBLIC!"
     PRIVATE_FLAG="false"
   fi
-  curl -u ${{ secrets.GH_USERNAME }}:${{ secrets.GH_PASSWORD }} https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"
+  curl -u ${{ secrets.GH_USERNAME }}:${{ secrets.GH_PAT }} https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"
   echo
 
   echo "=== pushing $gh_org/$gh_repo to GitHub..."
-  git push --mirror https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PASSWORD }}@github.com/$gh_org/$gh_repo.git
+  git push --mirror https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PAT }}@github.com/$gh_org/$gh_repo.git
   echo
 
   if [ "$archive" = "yes" ]; then
     echo "=== archiving repository $gh_org/$gh_repo on GitHub..."
-    curl -X PATCH -u ${{ secrets.GH_USERNAME }}:${{ secrets.GH_PASSWORD } https://api.github.com/repos/$gh_org/$gh_repo -d "{\"archived\": true}"
+    curl -X PATCH -u ${{ secrets.GH_USERNAME }}:${{ secrets.GH_PAT } https://api.github.com/repos/$gh_org/$gh_repo -d "{\"archived\": true}"
   fi
 
   cd ..  
