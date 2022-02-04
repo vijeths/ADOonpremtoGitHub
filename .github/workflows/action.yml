@@ -17,9 +17,7 @@ jobs:
       - name: printing the list
         run: |
           ./migrate-repositories-to-github.sh ado_repositories.csv
-          echo Here is the list
-          ls -a
-          pwd
+       
         
         
     
