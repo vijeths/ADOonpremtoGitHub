@@ -1,4 +1,4 @@
-#running shell script with github workflow(new)
+#running shell script with github workflow(new1)
 name: Check for push
 on:
   push:
