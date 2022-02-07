@@ -15,7 +15,7 @@ do
   #next_url="https://api.bitbucket.org/2.0/repositories?role=member"
   #test=$(curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url")
   #echo "$test"
-  git clone --mirror https://vijeth565:kvaac3kw36q4hzzueqgsunzywl4yb6d4ifnwr7eozpkqu7mb5pva@dev.azure.com/$ado_org/Infy/_git/$ado_repo.git
+  git clone --mirror https://vijeth565:kvaac3kw36q4hzzueqgsunzywl4yb6d4ifnwr7eozpkqu7mb5pva@dev.azure.com/$ado_org/Infy/_git/$ado_repo
   cd $ado_repo.git
   echo
 
@@ -29,7 +29,7 @@ do
   echo
 
   echo "=== pushing $gh_org/$gh_repo to GitHub..."
-  git push --mirror https://vijeths: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@github.com/$gh_org/$gh_repo.git
+  git push --mirror https://vijeths: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@github.com/$gh_org/$gh_repo
   echo
 
   if [ "$archive" = "yes" ]; then
