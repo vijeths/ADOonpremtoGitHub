@@ -17,7 +17,7 @@ jobs:
       - name: Running migrate script
         run: |
           #bash migrate-repositories-to-github.sh ado_repositories.csv
-          git clone --mirror https://${{ secrets.ADO_USERNAME }}:${ secrets.ADO_PAT }}@dev.azure.com/vijeth565/Infy/_git/repoa
+          git clone --mirror https://"${{ secrets.ADO_USERNAME }}":"${ secrets.ADO_PAT }}"@dev.azure.com/vijeth565/Infy/_git/repoa
           #git clone --mirror https://vijeth565:kvaac3kw36q4hzzueqgsunzywl4yb6d4ifnwr7eozpkqu7mb5pva@dev.azure.com/vijeth565/Infy/_git/repoa
           pwd
           ls -ltr
