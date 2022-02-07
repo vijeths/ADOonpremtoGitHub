@@ -1,14 +1,16 @@
 #!/bin/bash
 if [[ ! -f $1 ]]; then echo "$1 file not found"; exit 99; fi
-:"
+
 #read -p 'GitHub Username (not email): ' GH_USERNAME
 #read -sp 'GitHub Password: ' GH_PASSWORD
 #read -p 'BitBucket Username (not email): ' ADO_USERNAME
 #read -sp 'BitBucket Password: ' ADO_PASSWORD
+
 (cat "$1" ; echo) | tail -n +2 | tr -d '\r' | while IFS=, read -r ado_repo ado_org gh_repo gh_org description archive private
 do
   if [ -z "$ado_repo" ]; then continue; fi # skip empty lines
   echo
+  
   echo "###### Processing $ado_repo -> $gh_org/$gh_repo. Cloning from Bitbucket..."
   #next_url="https://api.bitbucket.org/2.0/repositories?role=member"
   #test=$(curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url")
