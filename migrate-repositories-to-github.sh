@@ -29,7 +29,7 @@ do
   echo
 
   echo "=== pushing $gh_org/$gh_repo to GitHub..."
-  git push --mirror https://vijeths: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@github.com/$gh_org/$gh_repo
+  git push --mirror https://vijeths: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@github.com/$gh_org/$gh_repo.git
   echo
 
   if [ "$archive" = "yes" ]; then
