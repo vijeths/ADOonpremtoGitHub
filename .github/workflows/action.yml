@@ -21,5 +21,7 @@ jobs:
           git clone --mirror https://vijeth565:kvaac3kw36q4hzzueqgsunzywl4yb6d4ifnwr7eozpkqu7mb5pva@dev.azure.com/vijeth565/Infy/_git/repoa
           pwd
           ls -ltr
+          cd repoa.git
+          ls -ltr
         
     
