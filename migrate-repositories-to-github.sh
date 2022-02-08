@@ -25,17 +25,17 @@ do
     echo "PUBLIC!"
     PRIVATE_FLAG="false"
   fi
-  #curl -u vijeths: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 https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"
-  curl -u ${{ secrets.GITHUB_TOKEN }}:'https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"'
+  curl -u vijeths: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 https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"
+  #curl -u ${{ secrets.GITHUB_TOKEN }}:'https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"'
   echo
 
   echo "=== pushing $gh_org/$gh_repo to GitHub..."
-  git push --mirror https://vijeths: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@github.com/$gh_org/$gh_repo.git
+  git push --mirror https://vijeths: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@github.com/$gh_org/$gh_repo.git
   echo
 
   if [ "$archive" = "yes" ]; then
     echo "=== archiving repository $gh_org/$gh_repo on GitHub..."
-    curl -X PATCH -u vijeths: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 https://api.github.com/repos/$gh_org/$gh_repo -d "{\"archived\": true}"
+    curl -X PATCH -u vijeths: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 https://api.github.com/repos/$gh_org/$gh_repo -d "{\"archived\": true}"
   fi
 
   cd ..  
