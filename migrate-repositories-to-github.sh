@@ -25,8 +25,9 @@ do
     echo "PUBLIC!"
     PRIVATE_FLAG="false"
   fi
-  curl -u vijeths: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 https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"
+  #curl -u vijeths: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 https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"
   #curl -u ${{ secrets.GITHUB_TOKEN }}:'https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"'
+  curl -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --location --request GET 'https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"'
   echo
 
   echo "=== pushing $gh_org/$gh_repo to GitHub..."
