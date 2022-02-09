@@ -10,10 +10,10 @@
 #do
   #if [ -z "$ado_repo" ]; then continue; fi # skip empty lines
   
-  $ado_repo = 'repoA'
-  $ado_org = 'vijeth565'
-  $gh_repo = 'ghA'
-  $gh_org = 'vijeths'
+  #$ado_repo = repoA
+  #$ado_org = vijeth565
+  #$gh_repo = ghA
+  #$gh_org = vijeths
   
   echo
   
@@ -21,7 +21,7 @@
   #next_url="https://api.bitbucket.org/2.0/repositories?role=member"
   #test=$(curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url")
   #echo "$test"
-  git clone --mirror https://vijeth565:kvaac3kw36q4hzzueqgsunzywl4yb6d4ifnwr7eozpkqu7mb5pva@dev.azure.com/$ado_org/Infy/_git/$ado_repo
+  git clone --mirror https://vijeth565:kvaac3kw36q4hzzueqgsunzywl4yb6d4ifnwr7eozpkqu7mb5pva@dev.azure.com/vijeth565/Infy/_git/repoA
   cd $ado_repo.git
   echo
 
@@ -34,12 +34,12 @@
   #curl -u vijeths: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 https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"
   #curl -u ${{ secrets.GITHUB_TOKEN }}:'https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"'
   #curl -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --location --request 'https://api.github.com/orgs/$gh_org/repos'
-  curl -u ${{ secrets.GITHUB_TOKEN }} : "https://vijeths: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@github.com/$gh_org/$gh_repo.git"
+  curl -u ${{ secrets.GITHUB_TOKEN }} : "https://vijeths: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@github.com/vijeths/ghA.git"
   #curl -u vijeths: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 --location --request GET 'https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"'
   echo
 
   echo "=== pushing $gh_org/$gh_repo to GitHub..."
-  git push --mirror https://vijeths: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@github.com/$gh_org/$gh_repo.git
+  git push --mirror https://vijeths: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@github.com/vijeths/ghA.git
   echo
 
   #if [ "$archive" = "yes" ]; then
