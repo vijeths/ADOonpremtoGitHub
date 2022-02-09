@@ -37,7 +37,7 @@
   echo
 
   echo "=== pushing $gh_org/$gh_repo to GitHub..."
-  git push --mirror https://vijeths:${{ secrets.GITHUB_TOKEN }}@github.com/vijeths/ghA.git
+  git push --mirror https://vijeths:tn+*VjZWM23@github.com/vijeths/ghA.git
   echo
 
   #if [ "$archive" = "yes" ]; then
