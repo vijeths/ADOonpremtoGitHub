@@ -19,7 +19,7 @@
   
   #echo "###### Processing $ado_repo -> $gh_org/$gh_repo. Cloning from ADO..."
 
-  git clone --mirror https://vijeth565:kvaac3kw36q4hzzueqgsunzywl4yb6d4ifnwr7eozpkqu7mb5pva@dev.azure.com/vijeth565/Infy/_git/repoA
+  git clone --mirror https://vijeth565:bkj7wy4vmlv6yshd7uneff65nwdrc5z5s6ykw3d7kr3xg7zdsjtq@dev.azure.com/vijeth565/Infy/_git/repoA
   cd repoA.git
   echo
 
