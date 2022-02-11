@@ -18,9 +18,9 @@ jobs:
         run: |
           #bash migrate.sh
           #git clone --mirror https://"${{ secrets.ADO_USERNAME }}":"${ secrets.ADO_PAT }}"@dev.azure.com/vijeth565/Infy/_git/repoa
-          git clone --mirror https://vijeth565:bkj7wy4vmlv6yshd7uneff65nwdrc5z5s6ykw3d7kr3xg7zdsjtq@dev.azure.com/vijeth565/Infy/_git/repoa
-          #pwd
-          #ls -ltr
+          git clone --mirror https://bkj7wy4vmlv6yshd7uneff65nwdrc5z5s6ykw3d7kr3xg7zdsjtq@dev.azure.com/vijeth565/Infy/_git/repoa
+          pwd
+          ls
           #cd repoa.git
           #ls -ltr
           
